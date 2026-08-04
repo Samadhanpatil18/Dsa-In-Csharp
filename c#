@@ -1,0 +1,47 @@
+using System;
+class ReverseString {
+  static void Main() {
+    Console.WriteLine("ReverseString Program");
+    
+    string str = "Samadhan";
+        
+    int length = str.Length;
+    Console.WriteLine(length);
+   
+    //2 ptr approach
+    
+    // we need to convert string into char array beacause c# string is immutable
+
+  char[] charArray = str.ToCharArray();  
+  // it will convert our str into array name as charArray remmember ToCharArray()
+  
+  int left = 0;
+  int right = length-1;
+  
+  
+  // 2 ptr appraoch
+  
+  while(left < right){
+      
+      char temp = charArray[left];
+      charArray[left]=charArray[right];
+      charArray[right]=temp;
+      
+      
+      //move left and right pointer forward 
+      
+      left++;
+      right--;
+      
+  }
+  //lets create new string and will conver this array into new string 
+  
+  string reversedString = new string(charArray);
+  Console.WriteLine(reversedString);
+  
+  }
+}
+
+
+
+//Time and space Complexity is O(n)
