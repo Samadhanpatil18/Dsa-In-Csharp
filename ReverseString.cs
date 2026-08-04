@@ -37,7 +37,7 @@ class ReverseString
             right--;
 
         }
-        //lets create new string and will conver this array into new string 
+        //lets create new string and will convert this array into new string 
 
         string reversedString = new string(charArray);
         Console.WriteLine(reversedString);
