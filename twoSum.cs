@@ -8,7 +8,7 @@ class twoSum{
      Dictionary <int, int> map = new Dictionary<int,int>();
      
  
-        
+        //it will run up to array length
         for(int i =0; i<num.Length;i++){
          int complement = target-num[i];
              
@@ -23,3 +23,6 @@ class twoSum{
         return;
     }
 }
+
+
+
