@@ -1,31 +1,27 @@
 using System;
 using System.Collections.Generic;
 
-class DuplicateNumInArray{
-    static void Main(){
-        
-    
- // Given an integer array, return true if any value appears more than once.
-//  Input:
-// [1,2,3,1]
+class DuplicateNumInArray
+{
+    static void Main()
+    {
+        int[] array = { 1, 2, 3, 1 };
+        bool hasDuplicate = HasDuplicate(array);
+        Console.WriteLine(hasDuplicate);
+    }
 
-// Output:
-// true
-// This time don't use a Dictionary.
-// Think about another collection in C# that stores only unique values.
+    public static bool HasDuplicate(int[] array)
+    {        HashSet<int> seen = new HashSet<int>();
 
-// 💡 Hint: HashSet<int>.
+        foreach (int num in array)
+        {
+            if (!seen.Add(num))
+            {
+               Console.WriteLine("Number is present");
+               return true;
+            }
+        }
 
-
-int [] array= {1,2,3,1};
-
-HashSet<int> seen = new HashSet<int>();
-
-foreach(int num in array){
-    if(seen.Contains(num)){
-        Console.WriteLine("True");
-    }else
-    seen.Add(num);
-}
-Console.WriteLine($"{nums} This Array contains Duplicate Number");}
-}
+        return false; // No duplicates found
+    }
+};
